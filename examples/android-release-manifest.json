@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "appId": "cloud-player",
+  "displayName": "Cloud Player",
+  "platform": "android",
+  "architecture": "android-universal",
+  "channel": "development",
+  "version": "2.7-dev.1",
+  "publishedAt": "2026-07-27T20:00:00Z",
+  "minimumVersion": "2.6.0",
+  "mandatory": false,
+  "releaseNotesUrl": "docs/releases/v2.7-dev.1.md",
+  "assets": [
+    {
+      "fileName": "Cloud-Player-v2.7-dev.1.apk",
+      "downloadUrl": "https://example.invalid/releases/Cloud-Player-v2.7-dev.1.apk",
+      "size": 23456789,
+      "sha256": "abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789",
+      "packageId": "com.typezero.cloudplayer",
+      "signingCertificateSha256": "fedcba9876543210fedcba9876543210fedcba9876543210fedcba9876543210"
+    }
+  ],
+  "rollback": {
+    "supported": false,
+    "retainVersions": 0
+  }
+}

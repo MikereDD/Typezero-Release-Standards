@@ -1,0 +1,14 @@
+artifacts/
+bin/
+obj/
+.gradle/
+**/build/
+*.keystore
+*.jks
+*.pfx
+*.p12
+*.snk
+*.user
+*.suo
+.DS_Store
+Thumbs.db

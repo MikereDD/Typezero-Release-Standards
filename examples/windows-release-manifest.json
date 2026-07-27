@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "appId": "mediaforge-studio",
+  "displayName": "MediaForge Studio",
+  "platform": "windows",
+  "architecture": "win-x64",
+  "channel": "development",
+  "version": "1.0-dev.30",
+  "publishedAt": "2026-07-27T20:00:00Z",
+  "minimumVersion": "1.0-dev.20",
+  "mandatory": false,
+  "releaseNotesUrl": "docs/releases/v1.0-dev.30.md",
+  "assets": [
+    {
+      "fileName": "MediaForge-Studio-v1.0-dev.30-win-x64.zip",
+      "downloadUrl": "https://example.invalid/releases/MediaForge-Studio-v1.0-dev.30-win-x64.zip",
+      "size": 12345678,
+      "sha256": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+    }
+  ],
+  "rollback": {
+    "supported": true,
+    "retainVersions": 1,
+    "minimumRollbackVersion": "1.0-dev.20"
+  }
+}

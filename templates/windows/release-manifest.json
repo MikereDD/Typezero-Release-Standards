@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "appId": "app-name",
+  "displayName": "AppName",
+  "platform": "windows",
+  "architecture": "win-x64",
+  "channel": "development",
+  "version": "0.1-dev.1",
+  "publishedAt": "2026-07-27T20:00:00Z",
+  "minimumVersion": "0.1-dev.1",
+  "mandatory": false,
+  "releaseNotesUrl": "docs/releases/v0.1-dev.1.md",
+  "assets": [],
+  "rollback": {
+    "supported": true,
+    "retainVersions": 1,
+    "minimumRollbackVersion": "0.1-dev.1"
+  }
+}

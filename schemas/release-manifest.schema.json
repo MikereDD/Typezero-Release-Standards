@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://typezero.example/schemas/release-manifest.schema.json",
+  "title": "Typezer∅ Release Manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "appId",
+    "displayName",
+    "platform",
+    "channel",
+    "version",
+    "publishedAt",
+    "minimumVersion",
+    "mandatory",
+    "releaseNotesUrl",
+    "assets",
+    "rollback"
+  ],
+  "properties": {
+    "schemaVersion": { "type": "integer", "const": 1 },
+    "appId": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "displayName": { "type": "string", "minLength": 1 },
+    "platform": { "type": "string", "enum": ["windows", "android"] },
+    "architecture": {
+      "type": "string",
+      "enum": ["win-x64", "win-arm64", "android-universal", "android-arm64-v8a", "android-armeabi-v7a", "android-x86_64"]
+    },
+    "channel": { "type": "string", "enum": ["stable", "development"] },
+    "version": { "type": "string", "minLength": 1, "maxLength": 64 },
+    "publishedAt": { "type": "string", "format": "date-time" },
+    "minimumVersion": { "type": "string", "minLength": 1, "maxLength": 64 },
+    "mandatory": { "type": "boolean" },
+    "mandatoryReason": { "type": "string", "minLength": 1 },
+    "releaseNotesUrl": { "type": "string", "minLength": 1 },
+    "assets": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/asset" }
+    },
+    "rollback": { "$ref": "#/$defs/rollback" }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "mandatory": { "const": true } }, "required": ["mandatory"] },
+      "then": { "required": ["mandatoryReason"] }
+    }
+  ],
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^[A-Fa-f0-9]{64}$"
+    },
+    "asset": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["fileName", "downloadUrl", "size", "sha256"],
+      "properties": {
+        "fileName": { "type": "string", "minLength": 1 },
+        "downloadUrl": { "type": "string", "pattern": "^https://" },
+        "size": { "type": "integer", "minimum": 1 },
+        "sha256": { "$ref": "#/$defs/sha256" },
+        "packageId": { "type": "string", "minLength": 3 },
+        "signingCertificateSha256": { "$ref": "#/$defs/sha256" },
+        "authenticodeSignerThumbprint": { "type": "string", "pattern": "^[A-Fa-f0-9]{40,64}$" }
+      }
+    },
+    "rollback": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["supported", "retainVersions"],
+      "properties": {
+        "supported": { "type": "boolean" },
+        "retainVersions": { "type": "integer", "minimum": 0, "maximum": 5 },
+        "minimumRollbackVersion": { "type": "string", "minLength": 1, "maxLength": 64 }
+      }
+    }
+  }
+}
