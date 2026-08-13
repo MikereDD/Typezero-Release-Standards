@@ -1,7 +1,7 @@
 [CmdletBinding()]
 param(
     [Parameter(Mandatory)]
-    [ValidatePattern('^[0-9A-Za-z][0-9A-Za-z.-]*$')]
+    [ValidatePattern('^[0-9]+(?:\.[0-9]+)+(?:-dev(?:\.[0-9]+)+)?$')]
     [string]$Version,
     [ValidateSet('Debug', 'Release')]
     [string]$Configuration = 'Release',

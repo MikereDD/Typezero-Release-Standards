@@ -1,16 +1,40 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "appId": "app-name",
   "displayName": "AppName",
   "platform": "windows",
   "architecture": "win-x64",
   "channel": "development",
   "version": "0.1-dev.1",
-  "publishedAt": "2026-07-27T20:00:00Z",
+  "publishedAt": "2026-08-13T12:00:00Z",
   "minimumVersion": "0.1-dev.1",
+  "updaterProtocolVersion": 1,
+  "minimumUpdaterProtocolVersion": 1,
   "mandatory": false,
   "releaseNotesUrl": "docs/releases/v0.1-dev.1.md",
-  "assets": [],
+  "changelogUrl": "CHANGELOG.md",
+  "assets": [
+    {
+      "fileName": "AppName-v0.1-dev.1-win-x64.zip",
+      "downloadUrl": "https://example.invalid/releases/AppName-v0.1-dev.1-win-x64.zip",
+      "size": 1,
+      "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "signature": {
+        "algorithm": "rsa-sha256",
+        "fileName": "AppName-v0.1-dev.1-win-x64.zip.sig",
+        "downloadUrl": "https://example.invalid/releases/AppName-v0.1-dev.1-win-x64.zip.sig",
+        "size": 1,
+        "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+        "keyId": "typezero-app-name-release-01",
+        "publicKeySha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    }
+  ],
+  "source": {
+    "repositoryUrl": "https://example.invalid/typezero/AppName",
+    "tag": "v0.1-dev.1",
+    "commit": "0000000000000000000000000000000000000000"
+  },
   "rollback": {
     "supported": true,
     "retainVersions": 1,

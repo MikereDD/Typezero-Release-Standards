@@ -1,25 +1,42 @@
 {
-  "schemaVersion": 1,
-  "appId": "cloud-player",
-  "displayName": "Cloud Player",
+  "schemaVersion": 2,
+  "appId": "sariel",
+  "displayName": "Sariel",
   "platform": "android",
   "architecture": "android-universal",
   "channel": "development",
   "version": "2.7-dev.1",
-  "publishedAt": "2026-07-27T20:00:00Z",
-  "minimumVersion": "2.6.0",
+  "publishedAt": "2026-08-13T12:00:00Z",
+  "minimumVersion": "2.6",
+  "updaterProtocolVersion": 2,
+  "minimumUpdaterProtocolVersion": 1,
   "mandatory": false,
   "releaseNotesUrl": "docs/releases/v2.7-dev.1.md",
+  "changelogUrl": "CHANGELOG.md",
   "assets": [
     {
-      "fileName": "Cloud-Player-v2.7-dev.1.apk",
-      "downloadUrl": "https://example.invalid/releases/Cloud-Player-v2.7-dev.1.apk",
+      "fileName": "Sariel-v2.7-dev.1.apk",
+      "downloadUrl": "https://example.invalid/releases/Sariel-v2.7-dev.1.apk",
       "size": 23456789,
       "sha256": "abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789",
-      "packageId": "com.typezero.cloudplayer",
+      "signature": {
+        "algorithm": "rsa-sha256",
+        "fileName": "Sariel-v2.7-dev.1.apk.sig",
+        "downloadUrl": "https://example.invalid/releases/Sariel-v2.7-dev.1.apk.sig",
+        "size": 512,
+        "sha256": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef",
+        "keyId": "typezero-sariel-release-01",
+        "publicKeySha256": "1111111111111111111111111111111111111111111111111111111111111111"
+      },
+      "packageId": "com.typezero.sariel",
       "signingCertificateSha256": "fedcba9876543210fedcba9876543210fedcba9876543210fedcba9876543210"
     }
   ],
+  "source": {
+    "repositoryUrl": "ssh://forgejo@arakiel.local/typezero/Sariel.git",
+    "tag": "v2.7-dev.1",
+    "commit": "3333333333333333333333333333333333333333"
+  },
   "rollback": {
     "supported": false,
     "retainVersions": 0

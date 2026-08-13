@@ -1,6 +1,6 @@
 [CmdletBinding()]
 param(
-    [Parameter(Mandatory)][string]$Version,
+    [Parameter(Mandatory)][ValidatePattern('^[0-9]+(?:\.[0-9]+)+(?:-dev(?:\.[0-9]+)+)?$')][string]$Version,
     [ValidateSet('Release', 'Debug')][string]$Variant = 'Release',
     [string]$AppName = 'AppName',
     [string]$OutputRoot = (Join-Path $PSScriptRoot '../artifacts')
